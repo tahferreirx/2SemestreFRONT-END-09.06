@@ -22,9 +22,9 @@ function ConsultaPessoas() {
         setPessoas(response.data)
     }
 
-    async function excluirPessoa(id: number) {
+    async function excluirPessoas(id: number) {
 
-        const confirmar = confirm('Deseja realmente excluir este aluno?')
+        const confirmar = confirm('Deseja realmente excluir esta pessoa?')
 
         if (confirmar) {
             await axios.delete(
@@ -37,16 +37,16 @@ function ConsultaPessoas() {
         }
     }
 
-    function editarPessoa(id: number) {
+    function editarPessoas(id: number) {
         navigate(`/pessoas/editar/${id}`)
     }
 
     return (
-        <div className="pessoas-pagina">
+        <div className="alunos-pagina">
 
-            <div className="pessoas-container">
+            <div className="alunos-container">
 
-                <div className="pessoas-topo">
+                <div className="alunos-topo">
 
                     <div>
                         <h1>Consulta de Pessoas</h1>
@@ -56,17 +56,17 @@ function ConsultaPessoas() {
                         </p>
                     </div>
 
-                    <div className="pessoas-topo-botoes">
+                    <div className="alunos-topo-botoes">
 
                         <button
-                            className="pessoas-botao-novo"
+                            className="alunos-botao-novo"
                             onClick={() => navigate('/pessoas/cadastro')}
                         >
                             Nova pessoa
                         </button>
 
                         <button
-                            className="pessoas-botao-voltar"
+                            className="alunos-botao-voltar"
                             onClick={() => navigate('/logado')}
                         >
                             Voltar
@@ -76,9 +76,9 @@ function ConsultaPessoas() {
 
                 </div>
 
-                <div className="pessoas-lista-card">
+                <div className="alunos-lista-card">
 
-                    <div className="pessoas-lista-topo">
+                    <div className="alunos-lista-topo">
 
                         <div>
                             <h2>Pessoas cadastradas</h2>
@@ -90,9 +90,9 @@ function ConsultaPessoas() {
 
                     </div>
 
-                    <div className="pessoas-tabela-container">
+                    <div className="alunos-tabela-container">
 
-                        <table className="pessoas-tabela">
+                        <table className="alunos-tabela">
 
                             <thead>
                                 <tr>
@@ -113,18 +113,18 @@ function ConsultaPessoas() {
 
 
                                             <td>
-                                                <div className="pessoas-acoes">
+                                                <div className="alunos-acoes">
 
                                                     <button
-                                                        className="pessoas-botao-editar"
-                                                        onClick={() => editarPessoa(pessoa.id)}
+                                                        className="alunos-botao-editar"
+                                                        onClick={() => editarPessoas(pessoa.id)}
                                                     >
                                                         Editar
                                                     </button>
 
                                                     <button
-                                                        className="pessoas-botao-excluir"
-                                                        onClick={() => excluirPessoa(pessoa.id)}
+                                                        className="alunos-botao-excluir"
+                                                        onClick={() => excluirPessoas(pessoa.id)}
                                                     >
                                                         Excluir
                                                     </button>

@@ -22,7 +22,7 @@ import CadastroHobbies from './pages/CadastroHobbie'
 import ConsultaHobbies from './pages/ConsultaHobbies'
 import CadastroConquista from './pages/CadastroConquista'
 import ConsultaConquista from './pages/ConsultaConquistas'
-import CadastroPessoas from './pages/CadastroPessoa'
+import CadastroPessoas from './pages/CadastroPessoas'
 import ConsultaPessoas from './pages/ConsultaPessoas'
 
 function App() {
@@ -62,6 +62,7 @@ function App() {
           path="/pessoas/editar/:id"
           element={<CadastroPessoas />}
         />
+
 
         <Route
           path="/alunos/cadastro"

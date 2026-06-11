@@ -24,14 +24,14 @@ function CadastroPessoas() {
         )
 
         setNome(response.data.nome)
-        setIdade(String(response.data.idade))
+        setIdade(response.data.idade)
     }
 
     async function salvarPessoa() {
 
         const aluno = {
             nome,
-            idade: Number(idade),
+            idade: Number(idade)
         }
 
         if (id) {
@@ -40,25 +40,25 @@ function CadastroPessoas() {
                 aluno
             )
 
-            alert('Pessoas atualizada com sucesso!')
+            alert('Pessoa atualizada com sucesso!')
         } else {
             await axios.post(
                 'http://localhost:8080/pessoas',
                 aluno
             )
 
-            alert('Pessoas cadastrada com sucesso!')
+            alert('Pessoa cadastrada com sucesso!')
         }
 
         navigate('/pessoas/consulta')
     }
 
     return (
-        <div className="pessoas-pagina">
+        <div className="alunos-pagina">
 
-            <div className="pessoas-container">
+            <div className="alunos-container">
 
-                <div className="pessoas-topo">
+                <div className="alunos-topo">
 
                     <div>
                         <h1>
@@ -71,7 +71,7 @@ function CadastroPessoas() {
                     </div>
 
                     <button
-                        className="pessoas-botao-voltar"
+                        className="alunos-botao-voltar"
                         onClick={() => navigate('/pessoas/consulta')}
                     >
                         Consultar pessoas
@@ -79,13 +79,13 @@ function CadastroPessoas() {
 
                 </div>
 
-                <div className="pessoas-form-card pessoas-form-centralizado">
+                <div className="alunos-form-card alunos-form-centralizado">
 
                     <h2>
-                        {id ? 'Alterar informações' : 'Nova pessoas'}
+                        {id ? 'Alterar informações' : 'Novo Pessoa'}
                     </h2>
 
-                    <div className="pessoas-formulario">
+                    <div className="alunos-formulario">
 
                         <input
                             type="text"
@@ -102,14 +102,14 @@ function CadastroPessoas() {
                         />
 
                         <button
-                            className="pessoas-botao-salvar"
+                            className="alunos-botao-salvar"
                             onClick={salvarPessoa}
                         >
                             {id ? 'Salvar alterações' : 'Cadastrar pessoa'}
                         </button>
 
                         <button
-                            className="pessoas-botao-cancelar"
+                            className="alunos-botao-cancelar"
                             onClick={() => navigate('/logado')}
                         >
                             Voltar ao painel

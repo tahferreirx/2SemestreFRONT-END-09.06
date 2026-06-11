@@ -31,7 +31,7 @@ function Logado() {
         {
             titulo: 'Pessoas',
             descricao: 'Gerenciar pessoas cadastradas no sistema',
-            rota: '/pessoa',
+            rota: '/pessoas/consulta',
             icone: '🙍‍♀️'
         },
         {

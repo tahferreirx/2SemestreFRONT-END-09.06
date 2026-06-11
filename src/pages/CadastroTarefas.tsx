@@ -78,7 +78,7 @@ function CadastroTarefas() {
                         </h1>
 
                         <p>
-                            Preencha os dados do aluno abaixo
+                            Preencha os dados da tarefa abaixo
                         </p>
                     </div>
 
